@@ -1,0 +1,49 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- meet
+entities:
+- count
+- data_time
+slots:
+  count:
+    type: unfeaturized
+  data_time:
+    type: unfeaturized
+responses:
+  utter_greet:
+  - text: Hey! How May I help you?
+  - text: Hey! How Can I help you?
+  utter_meet_request:
+  - text: Sure, Lets start over
+  utter_ask_count:
+  - text: How many people
+  utter_ask_data_time:
+  - text: When you want to have
+  utter_submit:
+  - text: "Confirm please \n No of People: {count}\n Time: {data_time}"
+  utter_submit_affirm:
+  - text: Thanks for your confirmation
+  utter_submit_deny:
+  - text: Thanks tor your time
+  utter_goodbye:
+  - text: Bye
+  - text: See you later
+actions:
+- utter_greet
+- utter_meet_request
+- utter_ask_count
+- utter_ask_time
+- utter_submit
+- utter_submit_affirm
+- utter_submit_deny
+- utter_goodbye
+- utter_ask_data_time
+forms:
+- meeting_form
